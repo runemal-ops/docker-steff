@@ -9,8 +9,6 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm install
-RUN npm install -D tailwindcss postcss autoprefixer \
-    npx tailwindcss init -p
 # If you are building your code for production
 # RUN npm ci --only=production
 
@@ -18,4 +16,4 @@ RUN npm install -D tailwindcss postcss autoprefixer \
 COPY . .
 
 EXPOSE 9090
-CMD [ "node", "server.js" ]
+CMD [ "npm", "run", "start" ]
